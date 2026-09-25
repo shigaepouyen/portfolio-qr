@@ -1,0 +1,9 @@
+# Contenu et secrets propres à chaque installation
+data/*
+!data/.htaccess
+media/*
+!media/.htaccess
+app/config.php
+
+.DS_Store
+*.tmp

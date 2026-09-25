@@ -1,0 +1,21 @@
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noimageindex"
+  Header set Referrer-Policy "no-referrer"
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+RewriteEngine On
+
+# Jamais accessibles depuis le web
+RewriteRule ^(data|app)(/|$) - [F,L]
+RewriteRule (^|/)\. - [F,L]
+
+# Fichiers réels (images, CSS, JS) servis directement
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Tout le reste passe par index.php
+RewriteRule ^ index.php [QSA,L]

@@ -1,0 +1,8 @@
+Options -Indexes
+# Aucun script ne s'exécute ici : seules des images WebP générées par le serveur y sont écrites.
+<FilesMatch "\.(php|phtml|phar|php\d|pht|cgi|pl|py|sh)$">
+  Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</IfModule>
