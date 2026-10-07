@@ -13,6 +13,7 @@ DirectoryIndex index.php
   Header set X-Robots-Tag "noindex, nofollow, noimageindex"
   Header set Referrer-Policy "no-referrer"
   Header set X-Content-Type-Options "nosniff"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
 </IfModule>
 
 RewriteEngine On
